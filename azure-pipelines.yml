@@ -6,11 +6,11 @@
 trigger:
 - master
 
-#pool:
-#  vmImage: Windows-latest
-
 pool:
-  name: Default
+  vmImage: Windows-latest
+
+#pool:
+#  name: Default
 
 steps:
 - script: echo Hello, world!
@@ -21,7 +21,8 @@ steps:
     targetType: 'inline'
     script: |
       cd $(build.sourcesdirectory)/
-      git remote add originTest1 https://%SYSTEM_ACCESSTOKEN%@dev.azure.com/SahithK/DueDate/_git/Test123 -Force
-      git push -u originTest1  --all -Force
+      git remote remove origin
+      git remote add origin https://%SYSTEM_ACCESSTOKEN%@dev.azure.com/SahithK/DueDate/_git/Test123
+      git push -u origin  --all
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
