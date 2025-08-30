@@ -21,7 +21,7 @@ steps:
     targetType: 'inline'
     script: |
       cd $(build.sourcesdirectory)/
-      git remote add originTest https://%SYSTEM_ACCESSTOKEN%@dev.azure.com/SahithK/DueDate/_git/Test123
-      git push -u originTest  --all
+      git remote add originTest1 https://%SYSTEM_ACCESSTOKEN%@dev.azure.com/SahithK/DueDate/_git/Test123 -Force
+      git push -u originTest1  --all -Force
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
