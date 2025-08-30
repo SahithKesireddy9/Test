@@ -6,11 +6,11 @@
 trigger:
 - master
 
-pool:
-  vmImage: Windows-latest
-
 #pool:
-#  name: Default
+#  vmImage: Windows-latest
+
+pool:
+  name: Default
 
 steps:
 - script: echo Hello, world!
